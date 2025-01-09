@@ -3,10 +3,11 @@
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('categories/index');
-});
+});*/
 
+Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
 Route::get('category/about', [CategoryController::class, 'about'])->name('category.about');
 Route::get('category/blog', [CategoryController::class, 'blog'])->name('category.blog');
 Route::get('category/blog-single', [CategoryController::class, 'blogSingle'])->name('category.blogSingle');
